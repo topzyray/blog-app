@@ -13,11 +13,24 @@ app.get('/', (req, res) => {
 })
 
 app.post('/submit', (req, res) => {
-
+    let date;
+    let time;
     let title = req.body.title;
     let comment = req.body.comment;
 
+    const day = new Date().getDay();
+    const month = new Date().getMonth();
+    const year = new Date().getFullYear();
+    date = `${day}-${month}-${year}`;
+
+    const hour = new Date().getHours();
+    const minutes = new Date().getMinutes();
+    const seconds = new Date().getSeconds();
+    time = `${hour}:${minutes}:${seconds}`;
+    
     res.render('index.ejs', {
+        date,
+        time,
         title,
         comment
     })

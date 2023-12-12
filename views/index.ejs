@@ -4,17 +4,22 @@
         <h1 class="viewpost_title">View Posts</h1>
         <section class="viewpost_body">
             <section class="blog_title">
-                <em><p>Date: <%= new Date().getDay() %>-<%= new Date().getMonth() %>-<%= new Date().getYear() %></p></em>
-                <br />
-                <h3>Title: <%= locals.title %></h3>
+                <p><strong>Date</strong>: <%= locals.date %></p>
+                <p><strong>Time</strong>: <%= locals.time %></p>
+                <p><strong>Title</strong>: <%= locals.title %></p>
             </section>
-            <br />
             <section class="blog_body">
-                <p><strong>Body: </strong><%= locals.comment %></p>
+                <p><strong>Comments</strong>: <%= locals.comment %></p>
             </section>
             <!-- <button type="submit">Delete Post</button> -->
         </section>
     </section>
+
+    <br>
+
+    <hr>
+
+    <br>
 
     <section class="createpost">
         <h1 class="createpost_title">Create a new post</h1>

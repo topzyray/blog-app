@@ -1,0 +1,36 @@
+<%- include("./partials/header.ejs") %>
+
+    <section class="viewpost">
+        <h1 class="viewpost_title">View Posts</h1>
+        <section class="viewpost_body">
+            <section class="blog_title">
+                <em><p>Date: <%= new Date().getDay() %>-<%= new Date().getMonth() %>-<%= new Date().getYear() %></p></em>
+                <br />
+                <h3>Title: <%= locals.title %></h3>
+            </section>
+            <br />
+            <section class="blog_body">
+                <p><strong>Body: </strong><%= locals.comment %></p>
+            </section>
+            <!-- <button type="submit">Delete Post</button> -->
+        </section>
+    </section>
+
+    <section class="createpost">
+        <h1 class="createpost_title">Create a new post</h1>
+        <section class="createpost_body">
+            <form action="/submit" method="POST">
+                <div>
+                    <input type="text" name="title" id="" placeholder="Blog title">
+                </div>
+                <div>
+                    <textarea name="comment" rows="10" cols="50" placeholder="Blog content goes here"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+<%- include("./partials/footer.ejs") %>    

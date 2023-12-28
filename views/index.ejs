@@ -1,27 +1,30 @@
 <%- include("./partials/header.ejs") %>
 
     <section class="viewpost">
-        <h1 class="viewpost_title">View Posts</h1>
+        <h1 class="viewpost_title">All Posts</h1>
         <section class="viewpost_body">
-            <section class="blog_title">
-                <p><strong>Date</strong>: <%= locals.date %></p>
-                <p><strong>Time</strong>: <%= locals.time %></p>
-                <p><strong>Title</strong>: <%= locals.title %></p>
-            </section>
-            <section class="blog_body">
-                <p><strong>Comments</strong>: <%= locals.comment %></p>
-            </section>
-            <!-- <button type="submit">Delete Post</button> -->
+            <% locals.posts.map((post) => { %>
+                <section class="blog_title">
+                    <p><strong>Date</strong>: <%= post.date %></p>
+                    <p><strong>Title</strong>: <%= post.title %></p>
+                </section>
+                <section class="blog_body">
+                    <p><strong>Content</strong>: <%= post.content %></p>
+                </section>
+                <section>
+                    <p><strong>Author:</strong> <%= post.author %></p>
+                </section>
+                <!-- <button type="submit" formaction="/edit" formmethod="PATCH">Edit</button>
+                <button>Delete</button> -->
+                <br>
+                <br>
+                <hr>
+                <br>
+            <% }) %>
         </section>
     </section>
 
-    <br>
-
-    <hr>
-
-    <br>
-
-    <section class="createpost">
+    <!-- <section class="createpost">
         <h1 class="createpost_title">Create a new post</h1>
         <section class="createpost_body">
             <form action="/submit" method="POST">
@@ -36,6 +39,6 @@
                 </div>
             </form>
         </section>
-    </section>
+    </section> -->
 
 <%- include("./partials/footer.ejs") %>    

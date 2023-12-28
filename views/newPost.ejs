@@ -1,0 +1,44 @@
+<%- include("./partials/header.ejs") %>
+
+<section class="createpost">
+    <% if (locals.status === "edit") {%>
+        <h1 class="createpost_title">Edit post</h1>
+        <section class="createpost_body">
+            <form action="/" method="PATCH">
+                <div>
+                    <input type="text" name="title" id="" placeholder="Title">
+                </div>
+                <div>
+                    <textarea name="content" rows="10" cols="50" placeholder="Content"></textarea>
+                </div>
+                <div>
+                    <input type="text" name="author" id="" placeholder="Author">
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+    <% } else { %>
+        <h1 class="createpost_title">New post</h1>
+        <section class="createpost_body">
+            <form action="/" method="POST">
+                <div>
+                    <input type="text" name="title" id="" placeholder="Title">
+                </div>
+                <div>
+                    <textarea name="content" rows="10" cols="50" placeholder="Content"></textarea>
+                </div>
+                <div>
+                    <input type="text" name="author" id="" placeholder="Author">
+                </div>
+                <div>
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        </section>
+
+    <% } %>
+</section>
+
+<%- include("./partials/footer.ejs") %>   
